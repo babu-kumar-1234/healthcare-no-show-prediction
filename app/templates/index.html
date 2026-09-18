@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Healthcare No-show Prediction</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/css/style.css"
+    >
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header class="header">
+
+            <h1>
+                Healthcare No-show Prediction
+            </h1>
+
+            <p>
+                Predict appointment no-show risk
+                shortly before the appointment.
+            </p>
+
+        </header>
+
+
+        <!-- Prediction Form -->
+        <section class="card">
+
+            <h2>Appointment Information</h2>
+
+            <form id="predictionForm">
+
+                <div class="form-grid">
+
+                    <!-- Gender -->
+                    <div class="form-group">
+
+                        <label for="Gender">
+                            Gender
+                        </label>
+
+                        <select
+                            id="Gender"
+                            name="Gender"
+                            required
+                        >
+                            <option value="">
+                                Select Gender
+                            </option>
+
+                            <option value="F">
+                                Female
+                            </option>
+
+                            <option value="M">
+                                Male
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Age -->
+                    <div class="form-group">
+
+                        <label for="Age">
+                            Age
+                        </label>
+
+                        <input
+                            type="number"
+                            id="Age"
+                            name="Age"
+                            min="0"
+                            max="100"
+                            placeholder="Enter age"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Neighbourhood -->
+                    <div class="form-group">
+
+                        <label for="Neighbourhood">
+                            Neighbourhood
+                        </label>
+
+                        <input
+                            type="text"
+                            id="Neighbourhood"
+                            name="Neighbourhood"
+                            placeholder="Enter neighbourhood"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Scholarship -->
+                    <div class="form-group">
+
+                        <label for="Scholarship">
+                            Scholarship
+                        </label>
+
+                        <select
+                            id="Scholarship"
+                            name="Scholarship"
+                            required
+                        >
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option value="0">
+                                No
+                            </option>
+
+                            <option value="1">
+                                Yes
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Hypertension -->
+                    <div class="form-group">
+
+                        <label for="Hipertension">
+                            Hypertension
+                        </label>
+
+                        <select
+                            id="Hipertension"
+                            name="Hipertension"
+                            required
+                        >
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option value="0">
+                                No
+                            </option>
+
+                            <option value="1">
+                                Yes
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Diabetes -->
+                    <div class="form-group">
+
+                        <label for="Diabetes">
+                            Diabetes
+                        </label>
+
+                        <select
+                            id="Diabetes"
+                            name="Diabetes"
+                            required
+                        >
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option value="0">
+                                No
+                            </option>
+
+                            <option value="1">
+                                Yes
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Alcoholism -->
+                    <div class="form-group">
+
+                        <label for="Alcoholism">
+                            Alcoholism
+                        </label>
+
+                        <select
+                            id="Alcoholism"
+                            name="Alcoholism"
+                            required
+                        >
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option value="0">
+                                No
+                            </option>
+
+                            <option value="1">
+                                Yes
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Handicap -->
+                    <div class="form-group">
+
+                        <label for="Handcap">
+                            Handicap Level
+                        </label>
+
+                        <select
+                            id="Handcap"
+                            name="Handcap"
+                            required
+                        >
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option value="0">
+                                0
+                            </option>
+
+                            <option value="1">
+                                1
+                            </option>
+
+                            <option value="2">
+                                2
+                            </option>
+
+                            <option value="3">
+                                3
+                            </option>
+
+                            <option value="4">
+                                4
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- SMS -->
+                    <div class="form-group">
+
+                        <label for="SMS_received">
+                            SMS Received
+                        </label>
+
+                        <select
+                            id="SMS_received"
+                            name="SMS_received"
+                            required
+                        >
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option value="0">
+                                No
+                            </option>
+
+                            <option value="1">
+                                Yes
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Scheduled Date -->
+                    <div class="form-group">
+
+                        <label for="ScheduledDay">
+                            Scheduled Date & Time
+                        </label>
+
+                        <input
+                            type="datetime-local"
+                            id="ScheduledDay"
+                            name="ScheduledDay"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Appointment Date -->
+                    <div class="form-group">
+
+                        <label for="AppointmentDay">
+                            Appointment Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="AppointmentDay"
+                            name="AppointmentDay"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Submit -->
+                <div class="button-group">
+
+    <button
+        type="submit"
+        id="predictButton"
+    >
+        Predict No-show Risk
+    </button>
+
+    <button
+        type="button"
+        id="resetButton"
+        class="reset-button"
+    >
+        Reset
+    </button>
+
+</div>
+
+            </form>
+
+        </section>
+
+
+        <!-- Loading -->
+        <div
+            id="loading"
+            class="loading hidden"
+        >
+            <p>
+                Analyzing appointment...
+            </p>
+        </div>
+        <div
+    id="errorMessage"
+    class="error-message hidden"
+></div>
+
+
+        <!-- Result -->
+        <section
+            id="resultCard"
+            class="card result-card hidden"
+        >
+
+            <h2>Prediction Result</h2>
+
+            <div class="result-content">
+
+                <p class="result-label">
+                    No-show Probability
+                </p>
+
+                <div
+                    id="riskPercentage"
+                    class="risk-percentage"
+                >
+                    0%
+                </div>
+
+                <div
+                    id="riskLevel"
+                    class="risk-level"
+                >
+                    Risk
+                </div>
+
+                <p id="predictionMessage">
+                    Prediction result will appear here.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="footer">
+
+    <p>
+        Healthcare Appointment No-show Prediction
+    </p>
+
+    <p>
+        Machine Learning Decision Support System
+    </p>
+
+    <p class="disclaimer">
+        This tool provides an estimated appointment no-show
+        risk based on machine-learning predictions.
+        It is intended for decision support and is not a
+        medical diagnosis.
+    </p>
+
+</footer>
+
+    </div>
+
+
+    <script src="/static/js/app.js"></script>
+
+</body>
+
+</html>

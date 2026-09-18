@@ -1,0 +1,7 @@
+{
+    "threshold": 0.23999999999999994,
+    "selection_method": "Maximum validation F1",
+    "evaluation_method": "Patient-level split",
+    "prediction_timing": "Shortly before appointment after SMS status is available",
+    "model": "Random Forest"
+}

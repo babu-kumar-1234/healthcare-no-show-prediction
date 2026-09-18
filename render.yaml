@@ -1,0 +1,5 @@
+services:
+  - type: web
+    name: healthcare-no-show-prediction
+    runtime: docker
+    healthCheckPath: /health
